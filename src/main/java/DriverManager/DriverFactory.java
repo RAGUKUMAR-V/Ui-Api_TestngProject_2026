@@ -1,9 +1,9 @@
 package DriverManager;
 
 import Constants.Constant;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
@@ -28,14 +28,17 @@ public class DriverFactory {
     public static void browserStart(){
 
         if(Constant.BROWSER.equals("chrome")){
-            WebDriverManager.chromedriver().setup();
+            //WebDriverManager.chromedriver().setup();
             driver= new ChromeDriver();
-        }else if(Constant.BROWSER.equals("firefox")){
-            WebDriverManager.firefoxdriver().setup();
-            driver=new FirefoxDriver();
+            driver.manage().window().maximize();
+        }else if(Constant.BROWSER.equals("edge")){
+           // WebDriverManager.edgedriver().setup();
+            driver=new EdgeDriver();
+            driver.manage().window().maximize();
         }else{
-            WebDriverManager.chromedriver().setup();
+           // WebDriverManager.chromedriver().setup();
             driver= new ChromeDriver();
+            driver.manage().window().maximize();
         }
     }
 

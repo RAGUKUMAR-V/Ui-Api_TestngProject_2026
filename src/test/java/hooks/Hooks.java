@@ -22,10 +22,10 @@ public class Hooks {
 
     }
 
-    @AfterSuite
-    public void tearDown(){
-        DriverFactory.getDriver().quit();
-    }
+//    @AfterSuite
+//    public void tearDown(){
+//        DriverFactory.getDriver().quit();
+//    }
 
 
 

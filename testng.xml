@@ -2,6 +2,10 @@
 
 <suite name="Testng Automation">
 
+    <listeners>
+        <listener class-name="listeners.itestlistener"/>
+    </listeners>
+
     <test name="Ui Automation">
 
         <classes>
